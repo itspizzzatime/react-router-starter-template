@@ -87,6 +87,10 @@ export function Dashboard() {
   const [days, setDays] = useState<number>(160);
   const [activeTab, setActiveTab] = useState("visualizer");
 
+  const yAxisFormatter = (v: number): string => {
+    return v >= 1000 ? `${(v / 1000).toFixed(0)}k` : String(v);
+  };
+
   const data = runSIR(N, I0, beta, gamma, days);
   const r0 = beta / gamma;
   const peakI = Math.max(...data.map(d => d.I));
@@ -192,7 +196,7 @@ export function Dashboard() {
                   />
                   <YAxis
                     tick={{ fontSize: 12, fill: "#888" }}
-                    tickFormatter={((v: number) => (v >= 1000 ? `${(v / 1000).toFixed(0)}k` : String(v))) as any}
+                    tickFormatter={yAxisFormatter}
                     label={{ value: "People", angle: -90, position: "insideLeft", offset: 10, fontSize: 12, fill: "#888" }}
                   />
                   <Tooltip content={<CustomTooltip />} />
