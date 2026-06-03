@@ -147,7 +147,7 @@ export function Welcome({ message }: { message: string }) {
     plugins: {
       legend: {
         position: "top" as const,
-        labels: { font: { weight: "600", size: 12 } }
+        labels: { font: { weight: "bold" as const, size: 12 } }
       },
       tooltip: {
         padding: 12,
