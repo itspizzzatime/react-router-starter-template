@@ -160,16 +160,16 @@ export function Welcome({ message }: { message: string }) {
     },
     scales: {
       x: {
-        title: { display: true, text: "Days", font: { weight: "bold" } },
+        title: { display: true, text: "Days", font: { weight: "bold" as const } },
         grid: { display: false }
       },
       y: {
-        title: { display: true, text: "Population Count", font: { weight: "bold" } },
+        title: { display: true, text: "Population Count", font: { weight: "bold" as const } },
         beginAtZero: true,
         grid: { color: "rgba(0, 0, 0, 0.04)" }
       }
     }
-  };
+  } as any;
 
   return (
     <main className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 py-12 px-4 transition-colors duration-200">
