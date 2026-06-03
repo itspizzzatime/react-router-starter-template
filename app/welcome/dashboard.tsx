@@ -192,7 +192,7 @@ export function Dashboard() {
                   />
                   <YAxis
                     tick={{ fontSize: 12, fill: "#888" }}
-                    tickFormatter={(v: number) => v >= 1000 ? `${(v / 1000).toFixed(0)}k` : v}
+                    tickFormatter={(v: number) => v >= 1000 ? `${(v / 1000).toFixed(0)}k` : v.toString()}
                     label={{ value: "People", angle: -90, position: "insideLeft", offset: 10, fontSize: 12, fill: "#888" }}
                   />
                   <Tooltip content={<CustomTooltip />} />
