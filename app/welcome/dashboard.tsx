@@ -466,22 +466,7 @@ function RawEDASection() {
         </ChartCard>
       </div>
 
-      <div style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.08)",
-        borderRadius: 12, padding: 16, marginBottom: 16 }}>
-        <div style={{ fontSize: 13, fontWeight: 500, color: "#1a1a18", marginBottom: 14 }}>
-          Per-page raw data summary
-        </div>
-        <Table
-          headers={["Page", "Posts", "Followers", "Avg final eng", "Max eng post"]}
-          rows={[...PAGE_DATA].sort((a,b) => b.posts - a.posts).map(p => [
-            <span style={{ fontWeight: 500 }}>{p.name}</span>,
-            p.posts,
-            p.followers.toLocaleString(),
-            <MiniBar value={p.avgEng} max={1120.9} color={C_NEW.teal} />,
-            Math.round(p.avgEng * 1.8),
-          ])}
-        />
-      </div>
+
 
       <div style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.08)",
         borderRadius: 12, padding: 16 }}>
